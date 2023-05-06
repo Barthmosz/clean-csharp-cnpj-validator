@@ -16,5 +16,11 @@ namespace Clean.CnpjValidator.Test
         {
             Assert.That(CnpjValidator.Validate(""), Is.EqualTo(false));
         }
+
+        [Test, Description("ensure CnpjValidator returns true if a valid cnpj is provided")]
+        public void CnpjValidator_ValidCnpj_ReturnsTrue()
+        {
+            Assert.That(CnpjValidator.Validate("12.345.678/9123-45"), Is.EqualTo(true));
+        }
     }
 }
